@@ -22,5 +22,37 @@ namespace ProyectoMVC_Net_1.Controllers
             //Hay que poner el modelo en el return, solo un modelo por cada vista
             return View( p );
         }
+
+
+
+        public ActionResult VistaGet(String Dato)
+        {
+            //Usamos ViewBag
+            ViewBag.Mensaje = "Información recibida: " +Dato;
+            return View();
+        }
+
+
+        public ActionResult VistaPost()//Con esto muestro la vista
+        {//La primera vez no recibimos ningun dato
+            //Usamos ViewBag
+            return View();
+        }
+
+        //[HttpPost]//Recibe los datos
+        //public ActionResult VistaPost(String nombre, String apellido)
+        //{
+        //    //Usamos ViewBag
+        //    ViewBag.Mensaje = "Información recibida: " + nombre  +  ", " + apellido;
+        //    return View();
+        //}
+
+        [HttpPost]//Recibe los datos
+        public ActionResult VistaPost(Persona persona)
+        {
+            //Usamos ViewBag
+            ViewBag.Mensaje = "Información recibida: " + persona.Nombre + ", " + persona.Apellidos;
+            return View();
+        }
     }
 }

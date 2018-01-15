@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "SumarNumeros";
+}
+
+<h2>SumarNumeros</h2>
+
+<form method="post">
+    Número 1:
+    <input type="number"
+           name="numero1" />
+    <br />
+    Número 2
+    <input type="number"
+           name="numero2" />
+    <br />
+    <button type="submit">
+        Mostrar suma
+    </button>
+</form>
+
+<hr style="background-color:red" />
+<h2>
+    La suma de los números es: @ViewBag.Suma
+</h2>
+
+
+
